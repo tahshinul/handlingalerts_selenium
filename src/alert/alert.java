@@ -15,7 +15,18 @@ public class alert {
 
 		driver.findElement(By.id("name")).sendKeys(name);
 		driver.findElement(By.id("alertbtn")).click();
+		System.out.println(		driver.switchTo().alert().getText()		 );
+
+		driver.switchTo().alert().accept();
 		
+		
+		driver.findElement(By.id("confirmbtn")).click();
+		
+		Thread.sleep(1000);
+		System.out.println(		driver.switchTo().alert().getText()		 );
+		
+		driver.switchTo().alert().dismiss();
+//		System.out.println(		driver.switchTo().alert().getText()		 );
 		
 		Thread.sleep(1000);
 		driver.quit();
