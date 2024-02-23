@@ -8,26 +8,24 @@ public class alert {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		String name =  "Tahshin";
+		String name = "Tahshin";
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 
 		driver.findElement(By.id("name")).sendKeys(name);
 		driver.findElement(By.id("alertbtn")).click();
-		System.out.println(		driver.switchTo().alert().getText()		 );
+		System.out.println(driver.switchTo().alert().getText());
 
 		driver.switchTo().alert().accept();
-		
-		
+
 		driver.findElement(By.id("confirmbtn")).click();
-		
+
 		Thread.sleep(1000);
-		System.out.println(		driver.switchTo().alert().getText()		 );
-		
+		System.out.println(driver.switchTo().alert().getText());
+
 		driver.switchTo().alert().dismiss();
-//		System.out.println(		driver.switchTo().alert().getText()		 );
-		
+
 		Thread.sleep(1000);
 		driver.quit();
 	}
